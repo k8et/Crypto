@@ -13,14 +13,11 @@ const Login = () => {
     useEffect(() => {
         const isLoggedIn = localStorage.getItem("isLoggedIn");
         if (isLoggedIn) {
-            console.log('logedIn', isLoggedIn);
             auth.onAuthStateChanged((user) => {
                 if (user) {
                     setLoggedIn(true);
-                    console.log("Пользователь вошел");
                 } else {
                     localStorage.removeItem("isLoggedIn");
-                    console.log("Пользователь не вошел");
                 }
             });
         }

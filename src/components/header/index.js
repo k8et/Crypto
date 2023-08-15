@@ -38,7 +38,6 @@ const Header = () => {
     }, []);
 
     const searchResults = JSON.parse(JSON.stringify(coinGeckoAPI.searchCoins(searchQuery)));
-    console.log(searchResults);
 
     const changeLang = (lng) =>{
         if (i18n.language === lng){

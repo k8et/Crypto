@@ -8,7 +8,6 @@ const SearchDropdown = ({ searchResults }) => {
     const handleCoinClick = (coinId, event) => {
         event.stopPropagation();
         navigate(`/coin/${coinId}`);
-        console.log(`Nav to /coin/${coinId}`);
     };
 
     return (
@@ -16,7 +15,6 @@ const SearchDropdown = ({ searchResults }) => {
             {searchResults.map(coin => (
                 <div key={coin.id} className={styles.searchResult}
                      onClick={(event) => {
-                         console.log('Clicked:', coin);
                          handleCoinClick(coin.id, event);
                      }}>
                     <img

@@ -14,14 +14,11 @@ const Register = () => {
         const isLoggedIn = localStorage.getItem("isLoggedIn");
 
         if (isLoggedIn) {
-            console.log('loggedIn', isLoggedIn);
             auth.onAuthStateChanged((user) => {
                 if (user) {
                     setLoggedIn(true);
-                    console.log("Пользователь вошел");
                 } else {
                     localStorage.removeItem("isLoggedIn");
-                    console.log("Пользователь не вошел");
                 }
             });
         }
